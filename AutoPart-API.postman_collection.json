@@ -1,0 +1,171 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "AutoPart API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create AutoPart",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Brake Pad\",\n  \"price\": 50,\n  \"description\": \"High quality brake pad\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/autoparts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["autoparts"]
+        }
+      }
+    },
+    {
+      "name": "Get All AutoParts",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/autoparts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["autoparts"]
+        }
+      }
+    },
+    {
+      "name": "Get AutoPart By ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/autoparts/{{autopartId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["autoparts", "{{autopartId}}"]
+        }
+      }
+    },
+    {
+      "name": "Update AutoPart",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Brake Pad\",\n  \"price\": 55,\n  \"description\": \"Updated description\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/autoparts/{{autopartId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["autoparts", "{{autopartId}}"]
+        }
+      }
+    },
+    {
+      "name": "Delete AutoPart",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:3000/autoparts/{{autopartId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["autoparts", "{{autopartId}}"]
+        }
+      }
+    },
+    {
+      "name": "Create Sale",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"autopartId\": \"{{autopartId}}\",\n  \"saleDate\": \"2024-06-01T10:00:00.000Z\",\n  \"salePrice\": 60,\n  \"itemsCount\": 2\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/sales",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["sales"]
+        }
+      }
+    },
+    {
+      "name": "Get All Sales",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/sales",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["sales"]
+        }
+      }
+    },
+    {
+      "name": "Get Sale By ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/sales/{{saleId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["sales", "{{saleId}}"]
+        }
+      }
+    },
+    {
+      "name": "Update Sale",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"autopartId\": \"{{autopartId}}\",\n  \"saleDate\": \"2024-06-02T12:00:00.000Z\",\n  \"salePrice\": 65,\n  \"itemsCount\": 3\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/sales/{{saleId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["sales", "{{saleId}}"]
+        }
+      }
+    },
+    {
+      "name": "Delete Sale",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:3000/sales/{{saleId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["sales", "{{saleId}}"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "autopartId", "value": "" },
+    { "key": "saleId", "value": "" }
+  ]
+}
